@@ -1,0 +1,22 @@
+Define playbook:
+
+- hosts: vpn
+  become: true
+  tasks:
+    - name: Install OpenVPN
+      script: ../provision/provision-scripts/install_openvpn.sh
+    - name: Install WireGuard
+      script: ../provision/provision-scripts/install_wireguard.sh
+
+
+Create inventory file:
+
+[vpn]
+20.51.xx.xx ansible_user=azureuser ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+
+Run:
+
+ansible-playbook -i ansible/inventory/hosts ansible/playbook.yml
+
+5️⃣
