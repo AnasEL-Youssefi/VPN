@@ -1,0 +1,24 @@
+Example content:
+
+# Azure Configuration
+AZURE_SUBSCRIPTION_ID=
+AZURE_RESOURCE_GROUP=vpn-rg
+AZURE_LOCATION=eastus
+VM_NAME=vpn-server
+VM_SIZE=Standard_B1s
+SSH_PUBLIC_KEY_PATH=~/.ssh/id_rsa.pub
+
+# OpenVPN Configuration
+OPENVPN_PORT=1194
+OPENVPN_PROTOCOL=udp
+
+# WireGuard Configuration
+WIREGUARD_PORT=51820
+WIREGUARD_NETWORK=10.8.0.0/24
+
+
+Usage:
+
+cp examples/sample_env.example .env
+
+7️⃣
