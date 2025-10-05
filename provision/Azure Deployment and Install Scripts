@@ -1,0 +1,42 @@
+provision/azure vm deployement
+
+This folder or script provisions your Azure VM where VPN servers will be installed.
+
+Step-by-step:
+
+Login to Azure:
+
+az login
+az account set --subscription "<SUBSCRIPTION_ID>"
+
+
+Create resource group:
+
+az group create --name vpn-rg --location eastus
+
+
+Create VM:
+
+az vm create \
+  --resource-group vpn-rg \
+  --name vpn-server \
+  --image UbuntuLTS \
+  --size Standard_B1s \
+  --admin-username azureuser \
+  --ssh-key-values ~/.ssh/id_rsa.pub \
+  --public-ip-address-dns-name vpn-server-unique
+
+
+Open ports:
+
+# OpenVPN UDP/1194, WireGuard UDP/51820, SSH
+az vm open-port --resource-group vpn-rg --name vpn-server --port 22
+az vm open-port --resource-group vpn-rg --name vpn-server --port 1194 --protocol udp
+az vm open-port --resource-group vpn-rg --name vpn-server --port 51820 --protocol udp
+
+
+Get VM IP:
+
+az vm show -d -g vpn-rg -n vpn-server --query publicIps -o tsv
+
+az vm show -d -g vpn-rg -n vpn-server --query publicIps -o tsv
