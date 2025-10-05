@@ -17,9 +17,13 @@ Fully automated VPN server deployment (OpenVPN + WireGuard) on Azure using Ansib
 Add installation guide:
 
 git clone https://github.com/AnasEL-Youssefi/VPN.git
+
 cd openvpn-wireguard
+
 cp examples/sample_env.example .env
+
 bash "provision/azure vm deployement"
+
 ansible-playbook ansible/playbook.yml
 
 
