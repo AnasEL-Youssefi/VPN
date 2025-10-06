@@ -18,21 +18,21 @@ Add installation guide:
 ```bash
 git clone https://github.com/AnasEL-Youssefi/VPN.git
 
-```bash
+
 cd openvpn-wireguard
 
-```bash
+
 cp examples/sample_env.example .env
 
-```bash
+
 bash "provision/azure vm deployement"
 
-```bash
+
 ansible-playbook ansible/playbook.yml
 
 
 Include usage examples:
-```bash
+
 bash provision/provision-scripts/generate_client.sh --type wireguard --name client1
 bash provision/provision-scripts/generate_client.sh --type openvpn --name client2
 
