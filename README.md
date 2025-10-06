@@ -14,7 +14,7 @@ Start with description:
 Fully automated VPN server deployment (OpenVPN + WireGuard) on Azure using Ansible and Bash scripts.
 
 
-Add installation guide:
+# Add installation guide:
 ```bash
 git clone https://github.com/AnasEL-Youssefi/VPN.git
 
@@ -31,7 +31,7 @@ bash "provision/azure vm deployement"
 ansible-playbook ansible/playbook.yml
 
 
-Include usage examples:
+# Include usage examples:
 
 bash provision/provision-scripts/generate_client.sh --type wireguard --name client1
 bash provision/provision-scripts/generate_client.sh --type openvpn --name client2
